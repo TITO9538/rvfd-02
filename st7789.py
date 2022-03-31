@@ -295,21 +295,21 @@ class ST77xx:
                 err += dx
             x0 += 1
             
-    def circle(x, y, r, color: {
-       int angulo = 0;
-       int sumax = 0;
-       int sumay = 0;
-       int totx = 0;
-       int toty = 0;
-       while(angulo <= 360) {
-           sumax = int(r * cos(angulo));
-           sumay = int(r * sen(angulo));
-           totx = x + sumax;
-           toty = y + sumay;
-           self.pixel(totx, toty, color);
-           angulo = angulo + 1;
-       }
-    }
+    def circle x, y, r, color:
+        angulo = 0
+        sumax = 0
+        sumay = 0
+        totx = 0
+        toty = 0
+        while angulo <= 360:
+            sumax = int(r * cos(angulo))
+            sumay = int(r * sin(angulo))
+            totx = x + sumax
+            toty = y + sumay
+            self.pixel(totx, toty, color)
+            angulo = angulo + 1
+       
+    
                 
 
 class ST7789(ST77xx):
